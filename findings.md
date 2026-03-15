@@ -34,6 +34,9 @@
 | 小项目先做文本语义检索，不先做图片或多模态 | 数据准备最简单，便于把注意力放在向量检索流程本身 |
 | 把学习成果拆成四类输出：概念卡片、场景矩阵、平台接入草图、Milvus 模块图 | 这样既能帮助记忆，也能直接服务后续平台集成 |
 | Milvus 深潜从官方文档入口开始，再映射到 GitHub 源码目录 | 先建立组件边界，再读代码实现，成本更低 |
+| Phase 3 Demo 采用 `Python + Milvus Lite + 本地中文样本数据` | 在真实向量数据库体验和最小环境成本之间取得平衡 |
+| Phase 3 同时保留 `keyword search` 与 `vector search` 两条路径 | 方便直接对比词面匹配与语义检索的差异 |
+| Phase 3 样本记录最少包含 `id/text/category/source` | 既能做向量检索，也能展示 metadata filter |
 
 ## Issues Encountered
 | Issue | Resolution |
@@ -49,6 +52,7 @@
 - Milvus 项目主页与 Quickstart: https://github.com/milvus-io/milvus
 - Phase 1 Lesson 1 笔记: /Projects/work/vectordbpreview/phase1_vectors_basics.md
 - Phase 2 Lesson 1 笔记: /Projects/work/vectordbpreview/phase2_vector_db_applications.md
+- Phase 3 Design Spec: /Projects/work/vectordbpreview/docs/superpowers/specs/2026-03-15-phase3-milvus-lite-demo-design.md
 
 ## Visual/Browser Findings
 - 官方架构页显示 Milvus 当前强调访问层、协调层、工作节点、存储层四层结构。

@@ -1,11 +1,11 @@
 # Progress Log
 
 ## Current Snapshot
-- **Overall progress:** Phase 1 已完成，Phase 2 核心学习已完成并进入收尾，整体仍处于 48 小时计划早期
-- **Current checkpoint:** Phase 2 收尾 / Phase 3 准备
-- **Status:** transition_to_phase3_prep
+- **Overall progress:** Phase 1 已完成，Phase 2 核心学习已完成，当前正式进入 Phase 3
+- **Current checkpoint:** Phase 3 - 最小语义检索 Demo（Milvus Lite）
+- **Status:** phase3_design_approved
 - **Last updated:** 2026-03-15 06:50 UTC
-- **Next recommended action:** 进入小项目准备，定义最小语义检索 Demo 的数据集、字段和实验目标
+- **Next recommended action:** 基于已批准设计，写出 implementation plan 并开始 TDD 实现
 
 ## Session: 2026-03-14
 
@@ -57,6 +57,20 @@
   - task_plan.md (updated)
   - progress.md (updated)
 
+### Phase 3 Design
+- **Status:** complete
+- **Started:** 2026-03-15 06:50 UTC
+- Actions taken:
+  - 确定 Phase 3 采用 `Python + Milvus Lite + 本地中文样本数据` 的默认方案。
+  - 明确 Demo 的最小范围：样本数据、embedding、Milvus Lite 入库、keyword/vector/filter 对比。
+  - 补充成功标准、文件结构、依赖选择和测试策略。
+  - 将设计写入正式 spec 文件，作为后续 implementation plan 的输入。
+- Files created/modified:
+  - docs/superpowers/specs/2026-03-15-phase3-milvus-lite-demo-design.md (created)
+  - findings.md (updated)
+  - task_plan.md (updated)
+  - progress.md (updated)
+
 ## Recommended Deliverables
 - 一页向量数据库场景矩阵
 - 一个最小 Milvus 语义检索 Demo
@@ -76,11 +90,11 @@
 ## 5-Question Reboot Check
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase 2 收尾 / Phase 3 准备，最小 Demo 设计即将开始 |
-| Where am I going? | 先补齐 Phase 2 的场景矩阵，再进入最小 Demo、小项目实现、平台方案和 Milvus 深潜 |
+| Where am I? | Phase 3，Milvus Lite 最小语义检索 Demo 的设计已批准并已写入 spec |
+| Where am I going? | 下一步写 implementation plan，然后开始最小 Demo 的 TDD 实现 |
 | What's the goal? | 在 48 小时内系统掌握向量数据库上层应用与 Milvus 下层实现 |
-| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色；Phase 1 已完成，Phase 2 口头检查已完成 |
-| What have I done? | 已完成两份学习笔记，完成 Phase 1，并完成 Phase 2 的核心学习与口头检查 |
+| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色，并明确了 Phase 3 Demo 的实现边界 |
+| What have I done? | 已完成两份学习笔记，完成 Phase 1，完成 Phase 2 的核心学习与口头检查，并写出 Phase 3 设计 spec |
 
 ## Resume Instructions
 - 新会话先读取 `task_plan.md`
