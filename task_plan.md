@@ -4,7 +4,7 @@
 在 48 小时内，从零建立对向量、Embedding、ANN 检索、向量数据库应用场景、数据平台集成方式的系统理解，并能沿着官方文档与源码入口深入研究 Milvus 2.6.x 的向量检索实现路径。
 
 ## Current Phase
-Phase 3 - 最小语义检索 Demo（Milvus Lite）
+Phase 3 完成 - 等待进入 Phase 4
 
 ## Phases
 
@@ -23,11 +23,11 @@ Phase 3 - 最小语义检索 Demo（Milvus Lite）
 - **Status:** in_progress
 
 ### Phase 3: 快速上手小项目（12-20h）
-- [ ] 用 Milvus Lite 或本地 Milvus 做一个最小语义检索 Demo
-- [ ] 数据集规模控制在 100-1000 条文本，避免环境噪音
-- [ ] 完成一次 keyword search 与 vector search 的对比
-- [ ] 增加 metadata filter、topK、简单评估样例
-- **Status:** in_progress
+- [x] 用 Milvus Lite 或本地 Milvus 做一个最小语义检索 Demo
+- [x] 数据集规模控制在 100-1000 条文本，避免环境噪音
+- [x] 完成一次 keyword search 与 vector search 的对比
+- [x] 增加 metadata filter、topK、简单评估样例
+- **Status:** complete
 
 ### Phase 4: 面向数据平台的集成视角（20-28h）
 - [ ] 设计向量数据在数据平台中的接入链路
@@ -84,4 +84,4 @@ Phase 3 - 最小语义检索 Demo（Milvus Lite）
 - 任何 Milvus 文档、Issue、源码入口的发现先写入 `findings.md`
 - 下一次会话恢复时，先读 `task_plan.md`，再读 `findings.md` 和 `progress.md`
 - 当前基线进度：Phase 1 已完成；Phase 2 的核心学习与口头检查已完成，但“场景-问题-方案”对照表尚未单独整理成文
-- 当前执行重点：进入 Phase 3，按 `Python + Milvus Lite + 本地中文样本数据` 实现最小语义检索 Demo
+- 当前执行重点：Phase 3 Demo 已完成，下一步可以进入 Phase 4 的平台集成视角

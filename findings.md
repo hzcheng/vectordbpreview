@@ -37,6 +37,8 @@
 | Phase 3 Demo 采用 `Python + Milvus Lite + 本地中文样本数据` | 在真实向量数据库体验和最小环境成本之间取得平衡 |
 | Phase 3 同时保留 `keyword search` 与 `vector search` 两条路径 | 方便直接对比词面匹配与语义检索的差异 |
 | Phase 3 样本记录最少包含 `id/text/category/source` | 既能做向量检索，也能展示 metadata filter |
+| Phase 3 最终使用本地轻量 embedder，而不是下载式大模型 embedding | 当前开发环境中 `sentence-transformers` 依赖过重；先保证 Milvus Lite 检索链路可稳定运行 |
+| 在当前 Codex 沙箱内运行 Milvus Lite 需要提权 | 本地 unix socket 绑定会被沙箱限制，提权后构建与查询脚本均可正常运行 |
 
 ## Issues Encountered
 | Issue | Resolution |
@@ -53,6 +55,9 @@
 - Phase 1 Lesson 1 笔记: /Projects/work/vectordbpreview/phase1_vectors_basics.md
 - Phase 2 Lesson 1 笔记: /Projects/work/vectordbpreview/phase2_vector_db_applications.md
 - Phase 3 Design Spec: /Projects/work/vectordbpreview/docs/superpowers/specs/2026-03-15-phase3-milvus-lite-demo-design.md
+- Phase 3 Implementation Plan: /Projects/work/vectordbpreview/docs/superpowers/plans/2026-03-15-phase3-milvus-lite-demo.md
+- Phase 3 Demo README: /Projects/work/vectordbpreview/phase3_demo/README.md
+- Phase 3 Sample Output: /Projects/work/vectordbpreview/phase3_demo/results/sample_run.md
 
 ## Visual/Browser Findings
 - 官方架构页显示 Milvus 当前强调访问层、协调层、工作节点、存储层四层结构。

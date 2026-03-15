@@ -1,0 +1,4 @@
+pymilvus
+milvus-lite
+pytest
+setuptools<81

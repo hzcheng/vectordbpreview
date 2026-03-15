@@ -1,0 +1,800 @@
+[
+  {
+    "id": "pyt-001",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 1。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-002",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 1。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-003",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 1。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-004",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 1。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-005",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 1。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-006",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 2。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-007",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 2。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-008",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 2。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-009",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 2。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-010",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 2。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-011",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 3。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-012",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 3。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-013",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 3。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-014",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 3。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-015",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 3。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-016",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 4。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-017",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 4。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-018",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 4。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-019",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 4。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-020",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 4。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-021",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 5。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-022",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 5。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-023",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 5。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-024",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 5。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-025",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 5。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-026",
+    "text": "Python 虚拟环境可以隔离项目依赖，避免不同项目的包版本冲突。 示例编号 6。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-027",
+    "text": "使用 pip 安装第三方库前，先创建独立的虚拟环境更稳妥。 示例编号 6。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-028",
+    "text": "调试 Python 程序时，日志级别和异常栈信息非常重要。 示例编号 6。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-029",
+    "text": "编写自动化脚本时，合理拆分函数比堆在一个文件里更易维护。 示例编号 6。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "pyt-030",
+    "text": "单元测试可以帮助你在重构 Python 代码时减少回归风险。 示例编号 6。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "dat-031",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 1。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-032",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 1。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-033",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 1。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-034",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 1。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-035",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 1。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-036",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 2。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-037",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 2。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-038",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 2。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-039",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 2。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-040",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 2。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-041",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 3。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-042",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 3。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-043",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 3。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-044",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 3。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-045",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 3。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-046",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 4。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-047",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 4。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-048",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 4。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-049",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 4。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-050",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 4。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-051",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 5。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-052",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 5。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-053",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 5。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-054",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 5。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-055",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 5。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-056",
+    "text": "PostgreSQL 支持事务、索引和复杂查询，适合通用业务数据库场景。 示例编号 6。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-057",
+    "text": "MySQL 常见于 Web 应用，需要结合索引设计避免全表扫描。 示例编号 6。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-058",
+    "text": "数据库慢查询优化通常从执行计划和索引覆盖开始分析。 示例编号 6。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-059",
+    "text": "向量数据库更擅长语义近邻检索，而不是精确事务处理。 示例编号 6。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-060",
+    "text": "为高并发查询设计主键和二级索引时，要同时考虑写入成本。 示例编号 6。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "dat-061",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 1。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-062",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 1。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-063",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 1。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-064",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 1。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-065",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 1。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-066",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 2。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-067",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 2。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-068",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 2。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-069",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 2。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-070",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 2。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-071",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 3。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-072",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 3。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-073",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 3。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-074",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 3。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-075",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 3。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-076",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 4。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-077",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 4。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-078",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 4。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-079",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 4。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-080",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 4。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-081",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 5。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-082",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 5。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-083",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 5。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-084",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 5。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-085",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 5。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-086",
+    "text": "数据管道需要处理抽取、清洗、转换和加载等多个步骤。 示例编号 6。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-087",
+    "text": "批处理任务要关注幂等性，否则重复调度会产生脏数据。 示例编号 6。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-088",
+    "text": "元数据管理有助于追踪字段来源、口径变化和血缘关系。 示例编号 6。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-089",
+    "text": "数据平台接入新数据源时，字段映射和质量校验必须先明确。 示例编号 6。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "dat-090",
+    "text": "增量同步任务要考虑 watermark 和迟到数据处理策略。 示例编号 6。",
+    "category": "data_engineering",
+    "source": "note"
+  },
+  {
+    "id": "ai-091",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 1。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-092",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 1。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-093",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 1。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-094",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 1。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-095",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 1。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-096",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 2。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-097",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 2。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-098",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 2。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-099",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 2。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-100",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 2。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-101",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 3。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-102",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 3。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-103",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 3。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-104",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 3。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-105",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 3。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-106",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 4。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-107",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 4。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-108",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 4。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-109",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 4。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-110",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 4。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-111",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 5。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-112",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 5。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-113",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 5。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-114",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 5。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-115",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 5。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-116",
+    "text": "RAG 系统通常先做向量召回，再把候选上下文交给大模型生成答案。 示例编号 6。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-117",
+    "text": "语义检索依赖 embedding 质量，好的表示往往比调 ANN 参数更重要。 示例编号 6。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-118",
+    "text": "向量搜索适合处理字面不同但含义接近的文本匹配问题。 示例编号 6。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-119",
+    "text": "重排模型常用于在召回结果上做更精细的最终排序。 示例编号 6。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-120",
+    "text": "多模态检索会把文本和图像映射到可比较的向量空间。 示例编号 6。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-121",
+    "text": "语义搜索可以找到“配置开发环境”和“搭建编程环境”这种同义表达。",
+    "category": "ai",
+    "source": "guide"
+  },
+  {
+    "id": "ai-122",
+    "text": "检索增强生成的关键是先找到相关片段，再组织答案。",
+    "category": "ai",
+    "source": "guide"
+  },
+  {
+    "id": "dat-123",
+    "text": "精确术语查询时，关键词搜索通常比语义搜索更直接。",
+    "category": "database",
+    "source": "guide"
+  },
+  {
+    "id": "pyt-124",
+    "text": "Python packaging 和依赖管理常常需要区分运行时与开发时依赖。",
+    "category": "python",
+    "source": "note"
+  },
+  {
+    "id": "dat-125",
+    "text": "数据仓库建模需要在易用性、性能和口径一致性之间平衡。",
+    "category": "data_engineering",
+    "source": "guide"
+  },
+  {
+    "id": "ai-126",
+    "text": "metadata filter 可以把召回范围限制在指定分类或来源内。",
+    "category": "ai",
+    "source": "note"
+  },
+  {
+    "id": "dat-127",
+    "text": "事务型数据库与向量数据库的职责边界并不相同。",
+    "category": "database",
+    "source": "note"
+  },
+  {
+    "id": "pyt-128",
+    "text": "很多 Python 项目通过 pytest 管理测试用例和断言。",
+    "category": "python",
+    "source": "tutorial"
+  },
+  {
+    "id": "dat-129",
+    "text": "数据治理不仅是建表，还包括权限、质量和口径管理。",
+    "category": "data_engineering",
+    "source": "tutorial"
+  },
+  {
+    "id": "ai-130",
+    "text": "ANN 检索是在召回率、延迟和成本之间做工程权衡。",
+    "category": "ai",
+    "source": "tutorial"
+  },
+  {
+    "id": "py-999",
+    "text": "配置开发环境时，先创建虚拟环境再安装依赖会更稳妥。",
+    "category": "python",
+    "source": "guide"
+  },
+  {
+    "id": "py-998",
+    "text": "搭建编程环境后，需要检查解释器版本、依赖和测试工具。",
+    "category": "python",
+    "source": "guide"
+  },
+  {
+    "id": "ai-999",
+    "text": "语义搜索系统通常结合向量召回、元数据过滤和重排模型。",
+    "category": "ai",
+    "source": "guide"
+  }
+]

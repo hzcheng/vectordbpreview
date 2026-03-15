@@ -1,11 +1,11 @@
 # Progress Log
 
 ## Current Snapshot
-- **Overall progress:** Phase 1 已完成，Phase 2 核心学习已完成，当前正式进入 Phase 3
-- **Current checkpoint:** Phase 3 - 最小语义检索 Demo（Milvus Lite）
-- **Status:** phase3_design_approved
-- **Last updated:** 2026-03-15 06:50 UTC
-- **Next recommended action:** 基于已批准设计，写出 implementation plan 并开始 TDD 实现
+- **Overall progress:** Phase 1 已完成，Phase 2 核心学习已完成，Phase 3 Demo 也已跑通
+- **Current checkpoint:** Phase 3 complete
+- **Status:** phase3_verified
+- **Last updated:** 2026-03-15 15:40 UTC
+- **Next recommended action:** 进入 Phase 4，设计向量数据接入平台时的数据模型、更新链路和索引策略
 
 ## Session: 2026-03-14
 
@@ -71,6 +71,44 @@
   - task_plan.md (updated)
   - progress.md (updated)
 
+### Phase 3 Plan
+- **Status:** complete
+- **Started:** 2026-03-15 07:16 UTC
+- Actions taken:
+  - 基于 Phase 3 spec 写出 implementation plan，拆分为数据与检索基线、向量检索链路、端到端验证三大块。
+  - 记录用户明确同意跳过 `worktree`，直接在当前工作区继续实现。
+  - 为后续实现明确了 TDD 顺序、验证命令和最终验收标准。
+- Files created/modified:
+  - docs/superpowers/plans/2026-03-15-phase3-milvus-lite-demo.md (created)
+  - progress.md (updated)
+
+### Phase 3 Implementation
+- **Status:** complete
+- **Started:** 2026-03-15 07:16 UTC
+- Actions taken:
+  - 创建了 `phase3_demo` 目录结构、133 条中文样本数据、数据加载模块和关键词检索基线。
+  - 实现了本地轻量 embedder、Milvus Lite collection 构建、向量检索和 metadata filter 查询。
+  - 通过 `systematic-debugging` 定位了 embedder 回退特征导致的错误召回，并增加回归测试后修正。
+  - 写出 README 和 sample run 文档，保留实际构建与查询结果供后续复盘。
+- Files created/modified:
+  - phase3_demo/requirements.txt (created)
+  - phase3_demo/README.md (created)
+  - phase3_demo/data/sample_docs.json (created)
+  - phase3_demo/src/demo_data.py (created)
+  - phase3_demo/src/retrieval.py (created)
+  - phase3_demo/src/vector_store.py (created)
+  - phase3_demo/src/build_demo.py (created)
+  - phase3_demo/src/search_demo.py (created)
+  - phase3_demo/tests/conftest.py (created)
+  - phase3_demo/tests/test_demo_data.py (created)
+  - phase3_demo/tests/test_retrieval.py (created)
+  - phase3_demo/tests/test_vector_store.py (created)
+  - phase3_demo/tests/test_search_demo.py (created)
+  - phase3_demo/results/sample_run.md (created)
+  - findings.md (updated)
+  - task_plan.md (updated)
+  - progress.md (updated)
+
 ## Recommended Deliverables
 - 一页向量数据库场景矩阵
 - 一个最小 Milvus 语义检索 Demo
@@ -81,6 +119,9 @@
 | Test | Input | Expected | Actual | Status |
 |------|-------|----------|--------|--------|
 | 学习状态持久化 | 新会话读取 `task_plan.md`、`findings.md`、`progress.md` | 能恢复计划和当前进度 | 文件已创建，具备恢复基础 | ✓ |
+| Phase 3 单元测试 | `pytest phase3_demo/tests -v` | 全部通过 | 9 passed | ✓ |
+| Phase 3 建库 | `python3 phase3_demo/src/build_demo.py` | 成功创建本地 Milvus Lite 数据库 | 构建 `phase3_demo/demo.db` 成功，写入 133 条样本 | ✓ |
+| Phase 3 查询 | `python3 phase3_demo/src/search_demo.py` | 输出 keyword/vector/filtered 三段结果 | 三段输出均正常，且结果符合预期 | ✓ |
 
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
@@ -90,11 +131,11 @@
 ## 5-Question Reboot Check
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase 3，Milvus Lite 最小语义检索 Demo 的设计已批准并已写入 spec |
-| Where am I going? | 下一步写 implementation plan，然后开始最小 Demo 的 TDD 实现 |
+| Where am I? | Phase 3 已完成，最小 Milvus Lite 语义检索 Demo 已验证通过 |
+| Where am I going? | 下一步进入 Phase 4，从数据平台视角设计向量数据接入链路 |
 | What's the goal? | 在 48 小时内系统掌握向量数据库上层应用与 Milvus 下层实现 |
-| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色，并明确了 Phase 3 Demo 的实现边界 |
-| What have I done? | 已完成两份学习笔记，完成 Phase 1，完成 Phase 2 的核心学习与口头检查，并写出 Phase 3 设计 spec |
+| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色，并通过本地 Demo 跑通了向量入库、关键词检索、向量检索和 metadata filter |
+| What have I done? | 已完成两份学习笔记，完成 Phase 1，完成 Phase 2 的核心学习与口头检查，并实现验证了 Phase 3 Demo |
 
 ## Resume Instructions
 - 新会话先读取 `task_plan.md`

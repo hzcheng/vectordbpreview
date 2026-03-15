@@ -1,3 +1,9 @@
 .agents/
 skills-lock.json
 .worktrees/
+__pycache__/
+*.pyc
+.pytest_cache/
+phase3_demo/demo.db
+.venv/
+phase3_demo/tmp_check.db
