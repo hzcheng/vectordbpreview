@@ -4,21 +4,21 @@
 在 48 小时内，从零建立对向量、Embedding、ANN 检索、向量数据库应用场景、数据平台集成方式的系统理解，并能沿着官方文档与源码入口深入研究 Milvus 2.6.x 的向量检索实现路径。
 
 ## Current Phase
-Phase 2 - 向量数据库应用场景（lesson_1_complete）
+Phase 2 收尾 / Phase 3 准备 - 最小语义检索 Demo 设计
 
 ## Phases
 
 ### Phase 1: 向量与检索基础（0-6h）
-- [ ] 理解什么是向量、Embedding、相似度、距离度量
-- [ ] 理解 dense vector、sparse vector、multi-vector 的区别
-- [ ] 理解为什么“语义相近”可以通过近邻检索实现
-- [ ] 能用自己的话解释 cosine / L2 / inner product 的使用场景
-- **Status:** in_progress
+- [x] 理解什么是向量、Embedding、相似度、距离度量
+- [x] 理解 dense vector、sparse vector、multi-vector 的区别
+- [x] 理解为什么“语义相近”可以通过近邻检索实现
+- [x] 能用自己的话解释 cosine / L2 / inner product 的使用场景
+- **Status:** complete
 
 ### Phase 2: 向量数据库应用场景（6-12h）
-- [ ] 梳理 AI 中最常见的 6 类场景：RAG、语义搜索、推荐、多模态检索、去重聚类、召回重排
-- [ ] 识别“什么时候该用向量数据库，什么时候不该用”
-- [ ] 理解向量检索链路：切分 -> embedding -> 入库 -> ANN -> filter -> rerank -> 返回
+- [x] 梳理 AI 中最常见的 6 类场景：RAG、语义搜索、推荐、多模态检索、去重聚类、召回重排
+- [x] 识别“什么时候该用向量数据库，什么时候不该用”
+- [x] 理解向量检索链路：切分 -> embedding -> 入库 -> ANN -> filter -> rerank -> 返回
 - [ ] 输出一页“场景-问题-方案”对照表
 - **Status:** in_progress
 
@@ -83,4 +83,5 @@ Phase 2 - 向量数据库应用场景（lesson_1_complete）
 - 每完成一个阶段，立刻更新 `progress.md`
 - 任何 Milvus 文档、Issue、源码入口的发现先写入 `findings.md`
 - 下一次会话恢复时，先读 `task_plan.md`，再读 `findings.md` 和 `progress.md`
-- 当前基线进度：Phase 2 Lesson 1 已完成，下一步进入最小 Demo 设计与实验准备
+- 当前基线进度：Phase 1 已完成；Phase 2 的核心学习与口头检查已完成，但“场景-问题-方案”对照表尚未单独整理成文
+- 当前执行重点：开始最小 Demo 的设计与实验准备，同时保留 Phase 2 收尾项待补齐

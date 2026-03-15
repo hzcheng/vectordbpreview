@@ -1,10 +1,10 @@
 # Progress Log
 
 ## Current Snapshot
-- **Overall progress:** 2 个学习模块已完成，仍处于 48 小时计划早期
-- **Current checkpoint:** Phase 2 - 向量数据库应用场景
-- **Status:** oral_check_complete
-- **Last updated:** 2026-03-14 02:33 UTC
+- **Overall progress:** Phase 1 已完成，Phase 2 核心学习已完成并进入收尾，整体仍处于 48 小时计划早期
+- **Current checkpoint:** Phase 2 收尾 / Phase 3 准备
+- **Status:** transition_to_phase3_prep
+- **Last updated:** 2026-03-15 06:50 UTC
 - **Next recommended action:** 进入小项目准备，定义最小语义检索 Demo 的数据集、字段和实验目标
 
 ## Session: 2026-03-14
@@ -22,7 +22,7 @@
   - progress.md (created)
 
 ### Phase 1: 向量与检索基础
-- **Status:** in_progress
+- **Status:** complete
 - Actions taken:
   - 完成 Lesson 1: 向量、embedding、相似度、距离度量、dense/sparse/multi-vector、TopK、ANN 基础。
   - 新增学习笔记文件，供后续会话恢复时直接读取。
@@ -44,6 +44,19 @@
   - findings.md (updated)
   - progress.md
 
+## Session: 2026-03-15
+
+### Progress Sync
+- **Status:** complete
+- **Started:** 2026-03-15 06:50 UTC
+- Actions taken:
+  - 基于 `phase1_vectors_basics.md` 确认 Phase 1 内容完整，状态同步为完成。
+  - 基于 `phase2_vector_db_applications.md` 确认 Phase 2 的核心学习和口头检查已完成，但“场景-问题-方案”对照表仍待单独整理。
+  - 统一 `task_plan.md` 与 `progress.md` 的当前检查点为“Phase 2 收尾 / Phase 3 准备”，避免文件间状态矛盾。
+- Files created/modified:
+  - task_plan.md (updated)
+  - progress.md (updated)
+
 ## Recommended Deliverables
 - 一页向量数据库场景矩阵
 - 一个最小 Milvus 语义检索 Demo
@@ -63,11 +76,11 @@
 ## 5-Question Reboot Check
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase 2 - 向量数据库应用场景，口头检查已完成 |
-| Where am I going? | 继续进入最小 Demo、小项目实现、平台方案和 Milvus 深潜 |
+| Where am I? | Phase 2 收尾 / Phase 3 准备，最小 Demo 设计即将开始 |
+| Where am I going? | 先补齐 Phase 2 的场景矩阵，再进入最小 Demo、小项目实现、平台方案和 Milvus 深潜 |
 | What's the goal? | 在 48 小时内系统掌握向量数据库上层应用与 Milvus 下层实现 |
-| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色；Phase 2 口头检查已完成 |
-| What have I done? | 已完成两份学习笔记，并完成 Phase 1 与 Phase 2 的口头检查 |
+| What have I learned? | 已理解向量基础、应用场景、混合检索和向量数据库在 RAG 中的角色；Phase 1 已完成，Phase 2 口头检查已完成 |
+| What have I done? | 已完成两份学习笔记，完成 Phase 1，并完成 Phase 2 的核心学习与口头检查 |
 
 ## Resume Instructions
 - 新会话先读取 `task_plan.md`
