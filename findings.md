@@ -8,6 +8,28 @@
 - 需要把学习进度持久化到文件，使新会话可以恢复状态并回答“当前学习进度”。
 
 ## Research Findings
+- HNSW 最稳妥的心智模型是“多层导航图”：高层负责跨区域快速逼近，底层负责局部候选扩展；`M` 控制图稠密度，`efConstruction` 控制建图候选宽度，`ef` 控制查询候选宽度。
+- 在当前 Milvus 基线里，sealed segment 的 HNSW 构建是 DataNode 后台异步任务：`CreateJob/CreateJobV2 -> IndexBuildTask enqueue -> Execute(CreateIndex) -> PostExecute(Upload)`，而不是用户请求线程内同步建完。
+- HNSW 的正式索引工件是 segment 级的，不是 collection 级单体；元数据层通过 `SegmentIndex.IndexFileKeys / IndexSerializedSize / IndexMemSize / CurrentIndexVersion / IndexType` 追踪该 segment 的 HNSW 工件。
+- growing segment 通常不会直接使用正式 HNSW；当前 segcore 配置会给 dense vector 选择 `IVFFLAT_CC` 或 `SCANN_DVR` 一类 interim index，因此“刚写入数据的查询路径”和“sealed segment 正式 HNSW 路径”需要分开理解。
+- Query 侧的 HNSW 运行体不在 Go struct 里裸露为图对象；Milvus 主要在 QueryNode/segcore 中维护向量索引入口和资源估算，真实图结构及其内部 buffer 由 Knowhere 索引对象持有。
+- HNSW 的外层磁盘承载由 Milvus 统一组织为 `index_files/{buildID}/{indexVersion}/{partID}/{segID}/{fileKey}`；每个 blob 再经 `IndexFileBinlogCodec` 加一层 descriptor/extra metadata 封装，而 HNSW 图内部二进制布局主要由 Knowhere 管理。
+- 当前对 “Milvus 索引体系” 的最稳妥心智模型应拆成 3 层：`Index`（field 级定义）、`SegmentIndex`（segment 级构建结果）、QueryNode/segcore 已加载索引对象（运行时可服务形态）。
+- `milvus/client/index/common.go` 暴露的主要索引族包括 dense vector（`FLAT`、`IVF_*`、`HNSW`、`SCANN`、`DISKANN`、`AUTOINDEX`、GPU 系列）、binary vector（`BIN_FLAT`、`BIN_IVF_FLAT`）、sparse vector（`SPARSE_INVERTED_INDEX`、`SPARSE_WAND`）、scalar/string/json（`INVERTED`、`BITMAP`、`STL_SORT`、`Trie`）、geometry（`RTREE`），另有 `MINHASH_LSH` 等 specialized 分支。
+- `milvus/internal/util/indexparamcheck/*checker.go` 表明不同索引支持的数据类型边界是明确校验的：向量索引统一经 `vecIndexChecker + vecindexmgr` 校验，`INVERTED` 支持 bool/arithmetic/string/array/JSON，`BITMAP` 支持 bool/int/string/array 且不能建在主键上，`Trie` 仅支持 string，`STL_SORT` 支持 numeric/string/timestamptz，`NGRAM` 支持 varchar/JSON(cast varchar)，`RTREE` 仅支持 geometry。
+- `milvus/internal/metastore/model/segment_index.go` 中的 `IndexFileKeys`、`IndexSerializedSize`、`IndexMemSize`、`CurrentIndexVersion`、`CurrentScalarIndexVersion` 说明真正可服务的索引不是 collection 级单体，而是 segment 级文件集合及其版本化元数据。
+- QueryNode 上的索引内存形态不是“Go struct 直接持有 HNSW/IVF 本体”；`LocalSegment` 在 Go 层主要维护 `fieldIndexes`、`fieldJSONStats`、`bm25Stats` 等 metadata，真正的索引主体通过 `LoadIndexInfo -> AppendIndexV2 -> UpdateSealedSegmentIndex` 装入 segcore。
+- `milvus/internal/core/src/segcore/IndexConfigGenerator.cpp` 和 `SegmentGrowingImpl.cpp` 说明 growing segment 也有 interim index：dense 向量会转成 `IVFFLAT_CC` 或 `SCANN_DVR` 一类临时索引，sparse 向量会转成 `SPARSE_*_CC`，因此 “growing 完全无索引” 是错误心智模型。
+- `milvus/internal/querynodev2/segments/index_attr_cache.go` 说明不同索引的运行时资源模型显式不同：`DISKANN` 是 memory+disk 混合加载模型，`INVERTED` 会把 index size 与 binlog data disk size 一起计入，普通内存索引则按内存放大系数估算。
+- `milvus/internal/storage/index_data_codec.go` 表明索引文件会先序列化 index params，再序列化各 index blob；descriptor/extra 信息里会附带 `indexBuildID`、`version`、`collectionID`、`partitionID`、`segmentID`、`fieldID`、`indexName`、`indexID`、`key`，因此磁盘层不是“裸索引文件”，而是带完整身份信息的 segment 级索引工件。
+- `milvus/pkg/util/metautil/segment_index.go` 表明向量/标量索引主路径骨架是 `{rootPath}/index_files/{buildID}/{indexVersion}/{partID}/{segID}/{fileKey}`；JSON key stats、BM25 stats、text sidecar 属于与主索引并列的附加工件，而不是完全相同的文件组织。
+- 当前对 “Milvus 数据组织” 的最稳妥心智模型应拆成 4 层：逻辑模型（collection/schema/field）、写入侧内存模型（`InsertData -> map[fieldID]FieldData`）、查询侧内存模型（`LocalSegment` Go wrapper + `segcore CSegment`）、持久化模型（insert/stats/delta/index logs 或 packed parquet + manifest）。
+- `milvus/internal/storage/insert_data.go` 明确说明写入侧内存不是 `[]Row`，而是按 `FieldID` 拆开的列；标量通常对应 `[]int64`/`[]string` 等，JSON 对应 `[][]byte`，向量列则是拍平后的连续缓冲区加 `Dim`。
+- nullable 字段的核心表达不是“特殊值占位”，而是 `Data + ValidData`；nullable vector 额外带 `LogicalToPhysicalMapping`，说明逻辑行和物理向量缓冲区位置可能不一一直接对应。
+- `milvus/internal/storage/data_codec.go` 的 `InsertCodec.Serialize` 会按 schema 遍历每个 field，为每个 field 单独创建 binlog writer 并写整列 payload；这直接证明 V1 持久化主线是 segment 内再按 field 切分，而不是把整行对象序列化成一个大块。
+- `milvus/internal/storage/binlog_util.go` 里的路径注释表明 insert/stats log 的典型路径形态是 `[log_type]/collID/partID/segID/fieldID/fileName`；可把它理解为 “先 segment，再 field，再 file”。
+- `milvus/internal/storage/rw.go` 已把持久化格式区分为 `StorageV1`、`StorageV2(parquet packed)`、`StorageV3(manifest)`；新版格式虽然不再总是直观表现为“一字段一旧式 binlog 文件”，但本质仍是列式组织，只是升级为 column group + packed files + manifest。
+- `milvus/internal/querynodev2/segments/segment.go` 说明 QueryNode 上的 `LocalSegment` 主要持有 metadata、bloom filter、field binlog/index 信息和缓存指标；真正的查询执行态数据与索引主要在 `segcore CSegment` 中，因此“segment 在查询内存里长什么样”不能只看 Go struct 字段。
 - 向量数据库的学习顺序不应该从内核开始，而应该从“向量是什么、为什么能检索、在哪些 AI 场景里有价值”开始，否则容易把索引和架构细节学成孤立知识。
 - Milvus 官方资料显示，当前学习 Milvus 最稳妥的方式是分三层阅读：架构总览 -> Data Processing -> 源码目录与关键模块。
 - Milvus 官方文档当前强调 shared-storage、storage/compute disaggregation、水平扩展，这意味着理解 Milvus 时不能只把它当成“带 HNSW 的单机库”。
@@ -135,6 +157,9 @@
 | Milvus 文档版本之间存在架构表述差异 | 计划中明确要求先锁定版本，再读源码和数据流程 |
 
 ## Resources
+- Milvus HNSW Deep Dive: /Projects/work/vectordbpreview/docs/milvus_hnsw_deep_dive.md
+- Milvus Index Types Memory And Disk Layout: /Projects/work/vectordbpreview/docs/milvus_index_types_memory_disk.md
+- Milvus Data Memory And Disk Layout: /Projects/work/vectordbpreview/docs/milvus_data_memory_disk_layout.md
 - Milvus GitHub 仓库: https://github.com/milvus-io/milvus
 - Milvus Releases: https://github.com/milvus-io/milvus/releases
 - Milvus What's New in v2.6.x: https://milvus.io/docs/whats_new.md

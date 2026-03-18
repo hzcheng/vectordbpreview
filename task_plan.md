@@ -129,3 +129,5 @@
 - 下一次会话恢复时，先读 `task_plan.md`，再读 `findings.md` 和 `progress.md`
 - 当前基线进度：Phase 1、Phase 2、Phase 3 已完成；原 `Phase 4A notes RAG` 草图降级为冻结背景材料
 - 当前执行重点已完成：7 个主题文档已经全部落盘，后续可按文档顺序进入专题复习或专项源码深读
+- 额外专题文档已补充完成：`docs/milvus_data_memory_disk_layout.md`、`docs/milvus_index_types_memory_disk.md`
+- 新会话如果只说“继续”，优先从某一类索引或执行路径做专项深挖；默认推荐顺序：`HNSW -> IVF_PQ -> INVERTED/BITMAP -> JSON key stats`

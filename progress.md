@@ -1,11 +1,58 @@
 # Progress Log
 
 ## Current Snapshot
-- **Overall progress:** Phase 1、Phase 2、Phase 3、Phase A、Phase B、Phase C、Theme 1、Theme 2、Theme 3、Theme 4、Theme 5、Theme 6、Theme 7 已完成；“7 个主题，一题一文档 + 每题映射本地源码树”的主线已完整落盘
+- **Overall progress:** Phase 1、Phase 2、Phase 3、Phase A、Phase B、Phase C、Theme 1、Theme 2、Theme 3、Theme 4、Theme 5、Theme 6、Theme 7 已完成；并已进入索引专项深挖阶段，当前已补完数据布局、索引布局与 HNSW 专题
 - **Current checkpoint:** All 7 themes complete
 - **Status:** milvus_7_themes_complete
-- **Last updated:** 2026-03-16 11:13 UTC
-- **Next recommended action:** 按 `docs/milvus_theme1_concepts.md` 到 `docs/milvus_theme7_query_flow.md` 的顺序复习；如果要继续深挖，下一步可以转入 QueryNode task/scheduler 或 QueryCoord target/distribution 的专项源码阅读
+- **Last updated:** 2026-03-18 01:35 UTC
+- **Next recommended action:** `HNSW` 专题已完成；如果继续深挖，建议按 `IVF_PQ -> INVERTED/BITMAP -> JSON key stats` 的顺序，继续做“算法结构 + build path + load path + storage wrapper”专项串读
+
+## Session: 2026-03-18
+
+### HNSW Deep Dive
+- **Status:** complete
+- **Started:** 2026-03-18 01:35 UTC
+- Actions taken:
+  - 围绕用户提出的 “HNSW 原理、直观例子、Milvus 中的工作方式、内存组织、硬盘存储格式、构建时机” 六个问题，补读了 `client/index/hnsw.go`、`indexparamcheck`、`datanode/index_services.go`、`datanode/index/task_index.go`、`indexbuilder`、`segcore`、`IndexFactory`、`index_data_codec`、`segment_index` 等关键入口。
+  - 明确了 HNSW 在算法层是“多层导航图 + small-world 候选扩展”的 ANN 结构，并补了一套二维点集和语义检索两种直观例子。
+  - 明确了 sealed segment 的 HNSW 构建走 DataNode 后台异步任务，而 growing segment 通常走 `IVFFLAT_CC / SCANN_DVR` 一类 interim index，不直接等同于正式 HNSW。
+  - 明确了 QueryNode/segcore 侧的 HNSW 运行体由向量索引入口 + Knowhere 索引对象承载，Milvus 主要管理 segment 级元数据、资源估算、加载流程和外层文件组织。
+  - 新增一份 HNSW 专题文档，便于后续直接继续深挖 HNSW 与其他索引的差异。
+- Files created/modified:
+  - docs/milvus_hnsw_deep_dive.md (created)
+  - findings.md (updated)
+  - progress.md (updated)
+
+## Session: 2026-03-18
+
+### Index Deep Dive
+- **Status:** complete
+- **Started:** 2026-03-18 00:40 UTC
+- Actions taken:
+  - 围绕用户提出的“Milvus 的索引有哪些、分别对应什么数据类型、在内存和硬盘上如何组织”的问题，补读了 `client/index`、`indexparamcheck`、`vecindexmgr`、`metastore/model`、`datacoord`、`datanode/index`、`querynodev2/segments`、`segcore` 等关键源码入口。
+  - 明确了索引体系的三层模型：field 级 `Index` 定义、segment 级 `SegmentIndex` 工件、QueryNode/segcore 中的已加载运行时索引对象。
+  - 梳理了主线索引类型与数据类型映射，并区分了主索引工件与 JSON/BM25/text 等 sidecar 工件。
+  - 整理了 growing segment interim index、sealed segment loaded index、`index_files/...` 路径骨架与 `IndexFileBinlogCodec` 编码方式。
+  - 新增一份索引专题文档，便于后续继续按具体索引类型深挖。
+- Files created/modified:
+  - docs/milvus_index_types_memory_disk.md (created)
+  - findings.md (updated)
+  - progress.md (updated)
+
+## Session: 2026-03-17
+
+### Data Layout Deep Dive
+- **Status:** complete
+- **Started:** 2026-03-17 09:25 UTC
+- Actions taken:
+  - 围绕用户提出的“各种类型数据在内存和硬盘上如何组织”问题，补读了 `insert_data`、`data_codec`、`rw`、`querynodev2/segments` 等核心源码入口。
+  - 明确了写入侧内存主模型是 `InsertData -> map[fieldID]FieldData`，不同字段类型分别映射到 `[]int64`、`[]string`、`[][]byte`、拍平向量缓冲区等具体列式结构。
+  - 明确了持久化主模型在 `StorageV1` 下表现为 segment 内按 field 切分的 insert/stats/delta logs，在 `StorageV2/V3` 下表现为 packed parquet / column groups / manifest。
+  - 新增一份带图表和简单例子的专题文档，便于后续继续深挖 segment、binlog 和 segcore。
+- Files created/modified:
+  - docs/milvus_data_memory_disk_layout.md (created)
+  - findings.md (updated)
+  - progress.md (updated)
 
 ## Session: 2026-03-14
 
@@ -330,6 +377,16 @@
   - docs/milvus_theme7_query_flow.md (created)
   - task_plan.md (updated)
   - findings.md (updated)
+  - progress.md (updated)
+
+### Session Sync: Ready For New Conversation
+- **Status:** complete
+- **Started:** 2026-03-17 08:51 UTC
+- Actions taken:
+  - 复核了 `task_plan.md`、`findings.md`、`progress.md` 的当前状态，确认 7 个主题已经全部完成。
+  - 确认 Theme 7 文档已经存在，当前学习主线处于可安全恢复状态。
+  - 刷新了 `progress.md` 的快照时间，方便下一次会话直接衔接当前进度。
+- Files created/modified:
   - progress.md (updated)
 
 ## Recommended Deliverables
